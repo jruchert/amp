@@ -1,20 +1,20 @@
 <?php
-    // get the data from the form
+    // get the data from the form - Modified by AMP
     $product_description = filter_input(INPUT_POST, 'product_description');
     $list_price = filter_input(INPUT_POST, 'list_price');
     $discount_percent = filter_input(INPUT_POST, 'discount_percent');
     
-    // calculate the discount
+    // calculate the discount - Modified by AMP
     $discount = $list_price * $discount_percent * .01;
     $discount_price = $list_price - $discount;
     
-    // apply currency formatting to the dollar and percent amounts
+    // apply currency formatting to the dollar and percent amounts - Modified by AMP
     $list_price_f = "$".number_format($list_price, 2);
     $discount_percent_f = $discount_percent."%";
     $discount_f = "$".number_format($discount, 2);
     $discount_price_f = "$".number_format($discount_price, 2);            
     
-    // escape the unformatted input
+    // escape the unformatted input - Modified by AMP
     $product_description_escaped = htmlspecialchars($product_description);
 ?>
 
