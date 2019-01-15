@@ -42,6 +42,7 @@
 
         <label>Discount Price:</label>
         <span><?php echo $discount_price_f; ?></span><br>
+        
     </main>
 </body>
 </html>
