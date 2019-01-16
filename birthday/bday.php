@@ -7,15 +7,18 @@
  
  <?php 
  
- $birthday = "1970-07-24";
- $todaysdate =  date("l, Y/m/d");
- $diff = date_diff($mybday, $today);
+ $birthday = date_create("1970-07-24");
+ $todaysdate =  date_create(date(" l, Y/m/d"));
+ $diff = date_diff($birthday,$todaysdate);
 
- echo "<b>Jeremy was born on: </b>" .  $birthday;
- 
- echo " <br> <b>It is: </b>" .  $todaysdate; 
  
  echo $diff->format("%a");
+ 
+ echo  $birthday;
+ 
+ echo  $todaysdate; 
+ 
+ 
  
  
  ?>
