@@ -1,28 +1,40 @@
-<html>
- <head>
- 
-  <title>Birthday App</title>
- </head>
- <body>
- 
- <?php 
- 
- $birthday = date_create("1970-07-24");
- $todaysdate =  date_create(date(" l, Y/m/d"));
- $diff = date_diff($birthday,$todaysdate);
 
- 
- echo $diff->format("%a");
- 
- echo  $birthday;
- 
- echo  $todaysdate; 
- 
- 
- 
- 
- ?>
- 
- </body>
- 
- </html>
+<?php
+
+    // get the data from the form
+    $bday = $_POST['bday'];
+    //$bday = $_POST[0];
+    // $whatsthis = filter_input(INPUT_POST, 'bday', FILTER_INPUT_EMAIL);
+    // $whatsthat = filter_input(INPUT_POST, 'bday', FILTER_SANITIZE_SPECIAL_CHARS);    
+        // var_dump($whatsthis);
+        // var_dump($whatsthat);
+     //var_dump($bday);
+     //var_dump($_POST);
+
+        $today = date_create(date("1, Y-m-d"));
+        $bday_m = date_create($bday);
+        $diff = date_diff($bday_m,$today);
+   
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Future Value Calculator</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <main>
+        <h1>Alive Days</h1>
+
+        <label>You have been alive:</label>
+        <span><?php echo $diff->format("%a days"); ?></span>
+
+    </main>
+</body>
+</html>
+
+
+
+
+
+
