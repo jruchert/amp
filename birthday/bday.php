@@ -11,7 +11,7 @@
      //var_dump($bday);
      //var_dump($_POST);
 
-        $today = date_create(date("1, Y-m-d"));
+        $today = date_create(date("Y-m-d"));
         $bday_m = date_create($bday);
         $diff = date_diff($bday_m,$today);
    
@@ -32,9 +32,3 @@
     </main>
 </body>
 </html>
-
-
-
-
-
-
