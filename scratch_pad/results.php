@@ -1,4 +1,4 @@
-<?php
+?php
     // get the data from the form
     $investment = filter_input(INPUT_POST, 'investment',
         FILTER_VALIDATE_FLOAT);
@@ -72,5 +72,5 @@
         echo "<b>This calculation was done </b>"  . date("l, Y/m/d") . "<br>"; ?> </span>
     </main>
      
-</body>
-</html>
+/body>
+/html>

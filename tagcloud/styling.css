@@ -1,0 +1,13 @@
+#tagcloud{
+        color: #dda0dd;
+        font-family: Arial, verdana, sans-serif;
+        width:200px;
+        border: 1px solid black;
+	text-align: center;
+}
+
+#tagcloud a{
+        color: green;
+        text-decoration: none;
+        text-transform: capitalize;
+}
