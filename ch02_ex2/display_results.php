@@ -66,7 +66,7 @@
 
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br>
-        <br>
+        
         <span><?php echo 
         date_default_timezone_set("America/Los Angeles");
         echo "<b>This calculation was done </b>"  . date("l, Y/m/d") . "<br>"; ?> </span>
