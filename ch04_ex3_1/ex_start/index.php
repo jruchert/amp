@@ -1,5 +1,7 @@
 <?php
 require_once 'database.php';
+include 'templates/header.php';
+
 
 // Get category ID
 if (!isset($category_id)) {
@@ -38,19 +40,7 @@ $statement3->execute();
 $products = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<!-- the head section -->
-<head>
-    <title>My Guitar Shop</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-</head>
-
-<!-- the body section -->
-<body>
-<header><h1>Product Manager</h1></header>
-<main>
     <h1>Product List</h1>
 
     <aside>
@@ -97,9 +87,4 @@ $statement3->closeCursor();
         <p><a href="add_product_form.php">Add Product</a></p>
         <p><a href="category_list.php">List Categories</a></p>
     </section>
-</main>
-<footer>
-    <p>&copy; <?php echo date('Y'); ?> My Guitar Shop, Inc.</p>
-</footer>
-</body>
-</html>
+<?php include 'templates/footer.php'; ?>

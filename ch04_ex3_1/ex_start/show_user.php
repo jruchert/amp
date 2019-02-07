@@ -1,6 +1,4 @@
 
-
-
 <?php
 // Create connection
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);

@@ -6,7 +6,7 @@ require 'path/to/Zebra_Session.php';
  
 //  start the session
 //  where $link is a connection link returned by mysqli_connect
-$session = new Zebra_Session($link, 'sEcUr1tY_c0dE');
+$session = new Zebra_Session($link, 'gWY5MVnfum4D');
  
 //  get the (approximate) number of active sessions
 $active_sessions = $session->get_active_sessions();
@@ -15,7 +15,7 @@ $active_sessions = $session->get_active_sessions();
 
 //  start the session
 //  where $link is a connection link returned by mysqli_connect
-$session = new Zebra_Session($link, 'sEcUr1tY_c0dE');
+$session = new Zebra_Session($link, 'gWY5MVnfum4D');
  
 // set "myvar" which will only be available
 // for the next server request and will be

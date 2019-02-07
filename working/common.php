@@ -1,6 +1,6 @@
 <?php
 
- session_start();
+session_start();
 if (empty($_SESSION['csrf'])) {
 	if (function_exists('random_bytes')) {
 		$_SESSION['csrf'] = bin2hex(random_bytes(32));
@@ -17,6 +17,4 @@ if (empty($_SESSION['csrf'])) {
 function escape($html) {
     return htmlspecialchars($html, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
 }
- 
- 
- ?>
+?>
