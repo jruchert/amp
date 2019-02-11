@@ -15,8 +15,7 @@ if (isset($_POST['submit'])) {
       "firstname" => $_POST['firstname'],
       "lastname"  => $_POST['lastname'],
       "email"     => $_POST['email'],
-      "age"       => $_POST['age'],
-      "location"  => $_POST['location'],
+      "age"       => $_POST['age'],jm
       "date"      => $_POST['date']
     ];
     $sql = "UPDATE users 

@@ -3,6 +3,7 @@ require_once 'database.php';
 include 'templates/header.php';
 
 
+
 // Get category ID
 if (!isset($category_id)) {
     $category_id = filter_input(INPUT_GET, 'category_id',
