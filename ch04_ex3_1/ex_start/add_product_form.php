@@ -1,5 +1,7 @@
 <?php
 require 'database.php';
+include 'templates/header.php';
+
 $query = 'SELECT *
           FROM categories
           ORDER BY categoryID';
@@ -8,20 +10,7 @@ $statement->execute();
 $categories = $statement->fetchAll();
 $statement->closeCursor();
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<!-- the head section -->
-<head>
-    <title>My Guitar Shop</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-
-<!-- the body section -->
-<body>
-    <header><h1>Product Manager</h1></header>
-
-    <main>
         <h1>Add Product</h1>
         <form action="add_product.php" method="post"
               id="add_product_form">
@@ -48,10 +37,5 @@ $statement->closeCursor();
             <input type="submit" value="Add Product"><br>
         </form>
         <p><a href="index.php">View Product List</a></p>
-    </main>
-
-    <footer>
-        <p>&copy; <?php echo date('Y'); ?> My Guitar Shop, Inc.</p>
-    </footer>
-</body>
-</html>
+ 
+ <?php include 'templates/footer.php'; ?>

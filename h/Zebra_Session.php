@@ -13,7 +13,7 @@
  *  @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
  *  @package    Zebra_Session
  */
-class Zebra_Session {
+/*class Zebra_Session {
 
     private $flashdata;
     private $flashdata_varname;
@@ -202,7 +202,7 @@ class Zebra_Session {
      *
      *  @return void
      */
-    public function __construct(&$link, $security_code, $session_lifetime = '', $lock_to_user_agent = true, $lock_to_ip = false, $gc_probability = '', $gc_divisor = '', $table_name = 'session_data', $lock_timeout = 60) {
+    /*public function __construct(&$link, $security_code, $session_lifetime = '', $lock_to_user_agent = true, $lock_to_ip = false, $gc_probability = '', $gc_divisor = '', $table_name = 'session_data', $lock_timeout = 60) {
 
         // continue if the provided link is valid
         if ($link instanceof MySQLi && $link->connect_error === null) {
@@ -304,7 +304,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    function close() {
+    /*function close() {
 
         // release the lock associated with the current session
         if ($this->_mysql_query('SELECT RELEASE_LOCK("' . $this->session_lock . '")'))
@@ -319,7 +319,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    function destroy($session_id) {
+    /*function destroy($session_id) {
 
         // delete the current session id from the database
         $this->_mysql_query('
@@ -341,7 +341,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    function gc() {
+    /*function gc() {
 
         // delete expired sessions from database
         $this->_mysql_query('
@@ -377,7 +377,7 @@ class Zebra_Session {
      *
      *  @return integer     Returns the number of active (not expired) sessions.
      */
-    public function get_active_sessions() {
+    /*public function get_active_sessions() {
 
         // call the garbage collector
         $this->gc();
@@ -428,7 +428,7 @@ class Zebra_Session {
      *                  as an associative array.
      *
      */
-    public function get_settings() {
+   /* public function get_settings() {
 
         // get the settings
         $gc_maxlifetime = ini_get('session.gc_maxlifetime');
@@ -450,7 +450,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    function open() {
+    /*function open() {
 
         return true;
 
@@ -461,7 +461,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    function read($session_id) {
+    /*function read($session_id) {
 
         // get the lock name, associated with the current session
         // notice the use of sha1() which shortens the session ID to 40 characters so that it does not exceed the limit of
@@ -546,7 +546,7 @@ class Zebra_Session {
      *
      *  @return void
      */
-    public function regenerate_id() {
+    /*public function regenerate_id() {
 
         // regenerates the id (create a new session with a new id and containing the data from the old session)
         // also, delete the old session
@@ -627,7 +627,7 @@ class Zebra_Session {
      *
      *  @return void
      */
-    public function stop() {
+   /* public function stop() {
 
         // if a cookie is used to pass the session id
         if (ini_get('session.use_cookies')) {
@@ -651,7 +651,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    function write($session_id, $session_data) {
+    /*function write($session_id, $session_data) {
 
         // insert OR update session's data - this is how it works:
         // first it tries to insert a new row in the database BUT if session_id is already in the database then just
@@ -689,7 +689,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    function _manage_flashdata() {
+   /* function _manage_flashdata() {
 
         // if there is flashdata to be handled
         if (!empty($this->flashdata)) {
@@ -728,7 +728,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    private function _mysql_affected_rows() {
+   /* private function _mysql_affected_rows() {
 
         // call "mysqli_affected_rows" and return the result
         return mysqli_affected_rows($this->link);
@@ -740,7 +740,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    private function _mysql_error() {
+    /*private function _mysql_error() {
 
         // call "mysqli_error" and return the result
         return 'Zebra_Session: ' . mysqli_error($this->link);
@@ -752,7 +752,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    private function _mysql_query($query) {
+    /*private function _mysql_query($query) {
 
         // call "mysqli_query"
         $result = mysqli_query($this->link, $query);
@@ -770,7 +770,7 @@ class Zebra_Session {
      *
      *  @access private
      */
-    private function _mysql_real_escape_string($string) {
+   /* private function _mysql_real_escape_string($string) {
 
         // call "mysqli_real_escape_string" and return the result
         return mysqli_real_escape_string($this->link, $string);

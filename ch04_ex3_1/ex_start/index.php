@@ -2,7 +2,11 @@
 require_once 'database.php';
 include 'templates/header.php';
 
+// Displays html Code for those logged in
+session_start();
 
+
+ if (isset($_SESSION['user'])) {
 
 // Get category ID
 if (!isset($category_id)) {
@@ -88,4 +92,5 @@ $statement3->closeCursor();
         <p><a href="add_product_form.php">Add Product</a></p>
         <p><a href="category_list.php">List Categories</a></p>
     </section>
+    
 <?php include 'templates/footer.php'; ?>
