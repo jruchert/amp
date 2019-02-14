@@ -45,7 +45,13 @@ $statement3->execute();
 $products = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
+<?php
+ session_start();
 
+
+ if (isset($_SESSION['user'])) {
+ ?>
+<h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
     <h1>Product List</h1>
 
     <aside>

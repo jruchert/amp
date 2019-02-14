@@ -10,7 +10,12 @@ $statement->execute();
 $categories = $statement->fetchAll();
 $statement->closeCursor();
 ?>
+<?php
+ session_start();
 
+
+ if (isset($_SESSION['user'])) {
+ ?>
         <h1>Add Product</h1>
         <form action="add_product.php" method="post"
               id="add_product_form">

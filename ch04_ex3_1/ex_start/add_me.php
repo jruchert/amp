@@ -94,7 +94,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
- 
+  <?php
+
+ } else {
+   ?>
 
     <div class="wrapper">
         <h2>Sign Up</h2>
@@ -124,3 +127,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>    
     
 <?php include 'templates/footer.php'; ?>
+<?php
+ }
+ ?>

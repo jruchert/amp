@@ -26,6 +26,12 @@ if ($category_id === null || $category_id === false ||
     $statement->execute();
     $statement->closeCursor();
 
+// Display the Product List page
+ session_start();
+
+
+ if (isset($_SESSION['user'])) {
+ 
     // Display the Product List page
     include 'index.php';
 }

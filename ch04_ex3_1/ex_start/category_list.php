@@ -1,6 +1,7 @@
 <?php
 require_once 'database.php';
 include 'templates/header.php';
+
 // Get all categories
 $query = 'SELECT * FROM categories
                        ORDER BY categoryID';
@@ -10,7 +11,12 @@ $categories = $statement->fetchAll();
 $statement->closeCursor();
 
 ?>
+<?php
+ session_start();
 
+
+ if (isset($_SESSION['user'])) {
+ ?>
     <h1>Category List</h1>
     <table>
         <tr>
