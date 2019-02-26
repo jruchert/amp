@@ -37,23 +37,21 @@ switch ($favcolor) {
 }
 */
 
-$favsquirel = "red";
+$favcolor = "red";
 
-switch ($favsquirel) {
+switch ($favcolor) {
     case "red":
-        echo "Your favorite color is red!";
+        echo "<p style="color: red;">Your favorite color is red!</p>";
         break;
     case "blue":
-        echo "Your favorite color is blue!";
+        echo "<p style="color: blue;">Your favorite color is blue!</p>";
         break;
     case "green":
-        echo "Your favorite color is green!";
+        echo "<p style="color: green;">Your favorite color is green!</p>";
         break;
     default:
-        echo "Your favorite color is neither red, blue, nor green!";
+        echo "Your favorite color is neither <p style="color: red;">red</p>,<p style="color: blue;"> blue</p>, nor <p style="color: green;">green!</p>";
 }
-
-
 
 
 ?>

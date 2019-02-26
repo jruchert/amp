@@ -29,45 +29,13 @@ $link[] = '<a href="whatever.html">page 8</a>';
 <!-- the body section -->
 <body>
 <main>
-<header><h1>Pick Your Poison</h1></header>
-<div class="topnav navbar-fixed-top">
+<header>
+<div class="topnav">
  <a class="active" href="/">Home</a>
+    <div class="login-container">
+    
+   
 
   
-<?php
 
-
-// Create loop to display links
-for($i = 0; $i < count($link); ++$i)
-{
-    // Create randomizer
-    // Use switch statement to find font size
-    $randomizer = rand(1,50);
-    switch($randomizer)
-    {
-    case ($randomizer <= 20):
-    $font_size = "11";
-    break;
-
-    case ($randomizer <= 30):
-    $font_size = "16";
-    break;
-
-    case ($randomizer <= 40):
-    $font_size = "18";
-    break;
-
-    case ($randomizer <= 50):
-    $font_size = "20";
-    break;
-    }
-
-      //Display the link
-    echo '<span style="font-size: ' .$font_size. ';">' .$link[$i]. '</span>&nbsp;&nbsp;';
-
-// Loop the next link 
-}
-?>
-
-</div>
-<?php include 'templates/footer.php'; ?>
+<h1>Pick Your Poison</h1></header>  

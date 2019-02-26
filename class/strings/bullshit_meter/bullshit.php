@@ -1,3 +1,14 @@
+
+
+    <?php
+       /* Asshole repellent */
+        $postfilter =
+          array(
+            'user_tasks'    =>    array('filter' => FILTER_SANITIZE_STRING, 'flags' => !FILTER_FLAG_STRIP_LOW),    // removes tags. formatting code is encoded -- add nl2br() when displaying
+        );
+        $revised_post_array = filter_input_array(INPUT_POST, $postfilter);    // must be referenced via a variable which is now an array that takes the place of $_POST[]
+          echo (nl2br($revised_post_array['user_tasks']));    // here we use nl2br() for the displayed value, for the ['user_tasks'] array value so that the newlines are formatted ?>
+    
 <?php
 
 /**
@@ -82,6 +93,16 @@ function bullshitMeter( $string )
         <h1>I call BULLSHIT!</h1>
         
          <br> 
+         <?php 
+     /* INTRO */
+          echo '<b>What does this do?</b><i></br><b>The act of calling bullshit:</b> When one person says something that another person</br>
+          is not in agreement with, that second person may "call bullshit" on whatever the first person said. By doing this, they</br>
+          are expressing their disagreement with what the person said in a humorous and yet serious way.</br> </i><p>This app will
+          take this act a step further --- by calculating the percentage of said bullshit.</p> ';?>
+    <?php 
+    /* Leonardo da Pisa, Mathmetician, fibanocci creator */
+          echo '<img height="336px" width="500px" src="https://wp-media.patheos.com/blogs/sites/268/2012/09/I-call-bullshit.jpg"/> </br>'; ?>
+
         <p><b>Input a string heavy in BS:</b></p> <p class="BS">'I bring your attention today to new benchmarks in quality driven development within the marketting sector. 
 By adopting a proactive attitude to client relationships, we can develop a mindset with client focus as its central theme, 
 while providing value added service guarentees that leverage new markets for us.'</p>
@@ -92,9 +113,9 @@ while providing value added service guarentees that leverage new markets for us.
         <span><?php
 
 /*** a string heavy in bs ***/
-$string = 'I bring your attention today to new benchmarks in quality driven development within the marketting sector. 
+$string = '<i>I bring your attention today to new benchmarks in quality driven development within the marketting sector. 
 By adopting a proactive attitude to client relationships, we can develop a mindset with client focus as its central theme, 
-while providing value added service guarentees that leverage new markets for us.';
+while providing value added service guarentees that leverage new markets for us.</i>';
 
 $bs = bullshitMeter( $string );
 
