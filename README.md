@@ -1,2 +1,2 @@
 # amp
-Repository for binarygalwalkin
+Repository AMP
