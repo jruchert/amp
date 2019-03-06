@@ -1,6 +1,6 @@
 <?php
-require_once 'database.php';
-include 'templates/header.php';
+require_once ('database.php');
+include ('templates/header.php');
 
 // Displays html Code for those logged in
 session_start();
@@ -12,7 +12,7 @@ session_start();
 if (!isset($category_id)) {
     $category_id = filter_input(INPUT_GET, 'category_id',
             FILTER_VALIDATE_INT);
-    if ($category_id === null || $category_id === false) {
+    if ($category_id === NULL || $category_id === FALSE) {
         $category_id = 1;
     }
 }

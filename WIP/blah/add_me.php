@@ -1,4 +1,4 @@
-<?php
+
 // Include config file
 require_once 'database.php';
 include 'templates/header.php';
@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
  } else {
    ?>
-
+//
     <div class="wrapper">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
@@ -125,8 +125,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
     </div>    
-    
-<?php include 'templates/footer.php'; ?>
-<?php
+    //
+ include 'templates/footer.php'; ?>
+
  }
- ?>

@@ -11,7 +11,7 @@ if ($category_id === null || $category_id === false ||
     $error = 'Invalid product data. Check all fields and try again.';
     include 'error.php';
 } else {
-    require_once 'database.php';
+    require_once('database.php');
 
     // Add the product to the database
     $query = 'INSERT INTO products
@@ -33,6 +33,6 @@ if ($category_id === null || $category_id === false ||
  if (isset($_SESSION['user'])) {
  
     // Display the Product List page
-    include 'index.php';
+    include('index.php');
 }
 ?>
