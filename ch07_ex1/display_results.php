@@ -52,8 +52,11 @@
         <label>Contact Via:</label>
         <span><?php echo htmlspecialchars($contact_via); ?></span><br><br>
 
-        <span>Comments:</span><br>
-        <span><?php echo $comments; ?></span><br>        
+        <span style=" font-weight: bold;";>Comments:</span><br>
+        <span><?php echo $comments; ?></span><br> 
+          <footer>
+    <p><b>&copy; <?php echo date('Y'); ?> AMP, Inc.</b></p>
+</footer>
     </main>
 </body>
 </html>

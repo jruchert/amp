@@ -47,6 +47,9 @@
         <input type="submit" value="Calculate"/><br>
       
       </form>
+        <footer>
+    <p><b>&copy; <?php echo date('Y'); ?> AMP, Inc.</b></p>
+</footer>
     </main>
 </body>
 </html>

@@ -6,6 +6,7 @@
             FILTER_VALIDATE_FLOAT);
     $years = filter_input(INPUT_POST, 'years', 
             FILTER_VALIDATE_INT);
+       
 
     // validate investment
     if ($investment === FALSE ) {
@@ -40,11 +41,21 @@
     for ($i = 1; $i <= $years; $i++) {
         $future_value += $future_value * $interest_rate *.01;
     }
-
+    // calculate the Net Present Value
+    $npv = $investment / pow(1 + $interest_rate, $years);
+    
+    // $exp = currency decimal places - 0 for Yen/Won, 2 for most others 
+    // $dp = ceil(0 - log10($n)) + $sigdigits; 
+     //$display = number_format($amount, ($exp>$dp)?$exp:$dp);
+     
     // apply currency and percent formatting
     $investment_f = '$'.number_format($investment, 2);
     $yearly_rate_f = $interest_rate.'%';
     $future_value_f = '$'.number_format($future_value, 2);
+    $npv_f = '$'.number_format("%.10f", round($npv, 10));
+
+   
+   
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,6 +78,13 @@
 
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br>
+        
+        <label>Net Present Value:</label>
+        <span><?php echo $npv; ?> 
+        
+          <footer>
+    <p><b>&copy; <?php echo date('Y'); ?> AMP, Inc.</b></p>
+</footer>
     </main>
 </body>
 </html>
