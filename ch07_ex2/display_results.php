@@ -42,8 +42,10 @@
         $future_value += $future_value * $interest_rate *.01;
     }
     // calculate the Net Present Value
-    $npv = $investment / pow(1 + $interest_rate, $years);
-    
+    $x = $investment;
+    $i = $interest_rate;
+    $t = $years;
+    $npv = $x / pow(1+$i, $t);   
     // $exp = currency decimal places - 0 for Yen/Won, 2 for most others 
     // $dp = ceil(0 - log10($n)) + $sigdigits; 
      //$display = number_format($amount, ($exp>$dp)?$exp:$dp);
@@ -52,10 +54,7 @@
     $investment_f = '$'.number_format($investment, 2);
     $yearly_rate_f = $interest_rate.'%';
     $future_value_f = '$'.number_format($future_value, 2);
-    $npv_f = '$'.number_format("%.10f", round($npv, 10));
-
-   
-   
+    $npv_f = '$'.number_format( round($npv, 2))  
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,8 +65,9 @@
 <body>
     <main>
         <h1>Future Value Calculator</h1>
+      <?php echo '<center><img height="120px" width="350px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8gEK8Mv4xH-kVXj9vNq5tpYBV1e1QwUwLyiIO1Xhzf1ZtXHk"/> </center></br>'; ?>
 
-        <label>Investment Amount:</label>
+        <fieldset><label>Investment Amount:</label>
         <span><?php echo $investment_f; ?></span><br>
 
         <label>Yearly Interest Rate:</label>
@@ -78,11 +78,20 @@
 
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br>
-        
+        </fieldset>
+        </br>
+        </br> 
+                 <?php echo '<center><img height="180px" width="280px" src="http://www.assignmentpoint.com/wp-content/uploads/2015/04/net-present-value.png"/></center> </br>'; ?>
+        <fieldset>
         <label>Net Present Value:</label>
-        <span><?php echo $npv; ?> 
-        
+        <span><?php echo $npv_f; ?> </span>
+        </br>
+        <label>What is this?</label>
+        <span> <a href="https://en.wikipedia.org/wiki/Net_present_value">NPV on Wikipedia</a></span>
+        </br></fieldset>
           <footer>
+          <label>Want to Go Again?</label>
+       <p><b><a href="index.php">Click Here</a></b></p>
     <p><b>&copy; <?php echo date('Y'); ?> AMP, Inc.</b></p>
 </footer>
     </main>

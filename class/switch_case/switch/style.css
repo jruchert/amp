@@ -70,3 +70,7 @@ border-radius:5px
 input[type=submit]:hover {
 background:linear-gradient(#ffdd7f 5%,#ffbc00 100%)
 }
+#main-content {
+  height: 200px;
+  overflow: auto;
+}

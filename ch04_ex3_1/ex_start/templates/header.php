@@ -12,29 +12,6 @@ $_SESSION['user']
 
 header("X-XSS-Protection: 1; mode=block");
 require('database.php');
-require('login.php');
-
-$query = 'SELECT username
-          FROM login';
-          
-$statement = $db->prepare($query);
-$statement->execute();
-$usernames = $statement->fetchAll();
-$statement->closeCursor();
-
-
-include('login.php'); // Includes Login Script
-
-if (empty($_COOKIE['stored_username'])) {
-$c="";
-} else {
-$c="checked";
-}
-
-if(isset($_SESSION['login_user'])){
-header("location: profile.php");
-}
-
 ?>
 
  

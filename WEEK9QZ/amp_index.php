@@ -7,6 +7,7 @@
 
 <body>
     <main>
+     
     <h1>My Calculator</h1>
     <form action="amp_calc.php" method="post">
 
@@ -37,8 +38,8 @@
 
     <input type="submit" name="submit" value="Calculate">
     <br>
-   <?php exit("</br><b>Please enter a real number!</b>"); ?>
-   <?php exit("</br><b>Blank --Please enter a real number!</b>"); ?>
+  
+   
     </form>
      <footer>
     <p><b>&copy; <?php echo date('Y'); ?> AMP, Inc.</b></p>

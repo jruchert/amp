@@ -5,8 +5,11 @@
  $number_2 = filter_input(INPUT_POST, 'number_2', 
             FILTER_VALIDATE_INT);
    if(!is_numeric($number_1)||!is_numeric($number_2)) {
-     include 'amp_index.php';
-     }  
+   include 'amp_index.php';
+   exit("<center><b>Error. Please enter a real number!</b></center>");
+     } 
+     
+// I had to write it this way --- it made sense to me, similair to what js or python is.   
 $result = "";
 class calculator
 {
@@ -34,7 +37,7 @@ class calculator
             break;
 
             default:
-            return "Sorry No command found";
+            return "<br>Sorry NO operator command found!";
         }   
     }
     function getresult($number_1, $number_2, $method_calc)
@@ -63,8 +66,18 @@ if(isset($_POST['submit']))
 
     <main>
     <h1>Your Calculator Results!</h1>
-        <label>The Answer is:</label>
-        <?php echo $result; ?><br>
+    
+        <fieldset><label>The Answer is:</label>
+        <p><?php echo $result; ?><br></p>
+       </br>
+       </fieldset>
+       
+       
+      <fieldset> <footer>
+       <label>Want to Go Again?</label>
+       <p><b><a href="amp_index.php">Click Here</a></b></p>
+    <p></br><b>&copy; <?php echo date('Y'); ?> AMP, Inc.</b></p>
+</footer></fieldset>
     </main>
 </body>
 </html>
